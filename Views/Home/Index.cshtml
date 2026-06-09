@@ -7,10 +7,10 @@
     <h1 class="display-4">Ahorcado</h1>
     <p> El ahorcado es un clásico juego de adivinanzas de lápiz y papel (o versión tablero) para dos o más jugadores. El objetivo es descubrir una palabra secreta eligiendo letras una por una, pero con un límite de intentos antes de "dibujar al ahorcado"</p>
     <div id="intentos"></div>
-    <h2>@ViewBag.palabraconGuiones</h2>
-   
+    <h2>@ViewBag.palabra</h2>
+    <h2 id = "guiones">@ViewBag.palabraconGuiones</h2>
     <input type="text" name="letra" placeholder="ingrese una letra" id="letra" maxlength="1">
-    <input type="hidden" name="palabra" id="palabra">
+    <input type="hidden" name="palabra" id="palabra" value = "@ViewBag.palabra">
     <input type="button" onclick="arriesgarLetra()" value="arriesgar letra">
 </div>
   
