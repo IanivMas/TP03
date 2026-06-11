@@ -11,19 +11,24 @@ function arriesgarLetra() {
     let letra = document.getElementById("letra").value;
     let guiones = document.getElementById("guiones");
     let bool = false;
+    let nuevoTexto = "";
     for (let i = 0; i < palabra.length; i++) {
-        console.log(palabra[i]);
-        console.log(guion[i]);
+       
         if (palabra[i] == letra) {
-            guiones[i] = letra;
+            nuevoTexto += letra;
             bool = true;
-            console.log("letra correcta")
+           
+        }
+        else
+        {
+             nuevoTexto += guiones.innerText[i];
         }
     }
+     guiones.innerText = nuevoTexto;
     if (bool == false) 
     {
         cantidadIntentos -= 1;
-        console.log("letra equivocada");
+        
     }
     intentos.innerText = "intentos: " + cantidadIntentos;
 }
