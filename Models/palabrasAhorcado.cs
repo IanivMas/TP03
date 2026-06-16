@@ -2,7 +2,7 @@ namespace TP03.Models;
 
 public class palabrasAhorcado
 {
-    private List<string> palabras;
+    private List<string> palabras {get; set;} ;
     public palabrasAhorcado()
     {
 

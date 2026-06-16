@@ -6,29 +6,39 @@
 let cantidadIntentos = 10;
 let intentos = document.getElementById("intentos");
 intentos.innerText = "intentos: " + cantidadIntentos;
+let resultado = document.getElementById("resultado");
+
 function arriesgarLetra() {
+
+    if (resultado.innerText === "ganaste" || resultado.innerText === "perdiste") {
+        return;
+    }
     let palabra = document.getElementById("palabra").value;
     let letra = document.getElementById("letra").value;
+    letra = letra.toUpperCase();
     let guiones = document.getElementById("guiones");
     let bool = false;
     let nuevoTexto = "";
     for (let i = 0; i < palabra.length; i++) {
-       
+
         if (palabra[i] == letra) {
             nuevoTexto += letra;
             bool = true;
-           
         }
-        else
-        {
-             nuevoTexto += guiones.innerText[i];
+        else {
+            nuevoTexto += guiones.innerText[i];
         }
     }
-     guiones.innerText = nuevoTexto;
-    if (bool == false) 
-    {
+    guiones.innerText = nuevoTexto;
+    if (bool == false) {
         cantidadIntentos -= 1;
-        
+
     }
     intentos.innerText = "intentos: " + cantidadIntentos;
+    if (!guiones.innerText.includes("_") && cantidadIntentos > 0) {
+        resultado.innerText = "ganaste";
+    }
+    else if (cantidadIntentos <= 0) {
+        resultado.innerText = "perdiste";
+    }
 }
