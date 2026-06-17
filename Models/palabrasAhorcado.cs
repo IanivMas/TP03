@@ -2,11 +2,12 @@ namespace TP03.Models;
 
 public class palabrasAhorcado
 {
-    private List<string> palabras {get; set;} ;
+    BD BD = new BD ();
+    private List<string> palabras {get; set;} 
     public palabrasAhorcado()
     {
 
-        this.palabras = new List<string>{"MIERCOLES", "COMPUTADORA", "HIPOPOTAMO", "PRESIDENTE", "DEPARTAMENTO", "DEPARTAMENTO", "ABECEDARIO", "BIBLIOTECA", "IMAGINACIÓN", "ESPECTÁCULO", "BIODIVERSIDAD" };
+        this.palabras = BD.agregarPalabras();
     }     
     public string devolverPalabra()
     {

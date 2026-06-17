@@ -7,10 +7,10 @@ public class BD
     public List<string> agregarPalabras()
     {
         List<string> palabras = new List<string>();
-        using(SqlConnection conexion = new SqlConnection (conexion))
+        using(SqlConnection conexion_BD = new SqlConnection (conexion))
         {
             string query = "SELECT * FROM Palabras";
-            palabras = conexion.Query<string>(query).ToList();
+            palabras = conexion_BD.Query<string>(query).ToList();
         }
         return palabras;
     }
